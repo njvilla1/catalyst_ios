@@ -32,6 +32,7 @@ class APIController {
             if (error != nil) {
                 println(error.localizedDescription)
             } else {
+                //creating error object for json error
                 var err: NSError?
                 
                 var result_array = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.MutableContainers, error: &err) as NSArray

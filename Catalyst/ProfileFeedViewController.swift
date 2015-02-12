@@ -16,6 +16,10 @@ class ProfileFeedViewController: UIViewController, UITableViewDelegate, UITableV
     var api = APIController()
     var table_data = []
     
+    //Image cache dictionary
+    var imageCache = [String : UIImage]()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,10 +39,6 @@ class ProfileFeedViewController: UIViewController, UITableViewDelegate, UITableV
         println("Received API Results")
         var result_array: NSArray = results["results"] as NSArray
         
-        var ib1: String = result_array[0]["info_blurb"] as String
-        
-        println("First infoblurb is \(ib1)")
-        
         dispatch_async(dispatch_get_main_queue(), {
             self.table_data = result_array
             self.profile_feed!.reloadData()
@@ -57,25 +57,52 @@ class ProfileFeedViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        println("The cell \(indexPath.row) is being reloaded")
+        
         var cell: UITableViewCell = profile_feed.dequeueReusableCellWithIdentifier("profile_feed_cell") as UITableViewCell
         
+        var rowData: NSDictionary = self.table_data[indexPath.row] as NSDictionary
+        
+        //Get image from image cache. If it doesn't exist, download image asynchronously
+        var image = self.imageCache[rowData["pic_url"] as String]
+        if (image == nil) {
+            //if the image does not exist, we need to download it
+            var imgURL: NSURL = NSURL (string:rowData["pic_url"] as String)!
+            
+            //Download an NSData representation of the image at the URL
+            let request: NSURLRequest = NSURLRequest(URL: imgURL)
+            NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: {(response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
+                if error == nil {
+                    image = UIImage(data: data)
+                    
+                    //store the image into our cache
+                    self.imageCache[rowData["pic_url"] as String] = image
+                    dispatch_async(dispatch_get_main_queue(), {
+                        if let cellToUpdate = self.profile_feed.cellForRowAtIndexPath(indexPath) {
+                            if let thumbnail = cellToUpdate.viewWithTag(104) as? UIImageView {
+                                thumbnail.image = image
+                            }                            
+                        }
+                    })
+                } else {
+                    println("Error: \(error.localizedDescription)")
+                }
+            })
+        } else {
+            //the image already exists in the cache, use the "image" variable
+            dispatch_async(dispatch_get_main_queue(), {
+                if let cellToUpdate = self.profile_feed.cellForRowAtIndexPath(indexPath) {
+                    if let thumbnail = cellToUpdate.viewWithTag(104) as? UIImageView {
+                        thumbnail.image = image
+                    }
+                }
+            })
+        }
         if let ib_label = cell.viewWithTag(102) as? UILabel {
             ib_label.text = self.table_data[indexPath.row]["info_blurb"] as? String
         }
-        if let thumbnail = cell.viewWithTag(104) as? UIImageView {
-            //grab the image url from json object for thumbnail image
-            let urlString: String = self.table_data[indexPath.row]["pic_url"] as String
-            let imgURL: NSURL? = NSURL(string: urlString)
-            
-            // Download an NSData representation of the image at the url
-            let imgData = NSData(contentsOfURL:imgURL!)
-            
-            thumbnail.image = UIImage(data: imgData!)
-        } else {
-            println("error getting thumbnail")
-        }
-        
-        return cell
+                return cell
     }
     
     func tableView (tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

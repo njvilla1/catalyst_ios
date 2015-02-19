@@ -8,6 +8,32 @@
 
 import UIKit
 
-class LoginScreenViewController: NSObject {
+class LoginScreenViewController: UIViewController {
+    @IBOutlet var loginButton: UIButton!
+    @IBOutlet var usernameField: UITextField!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view, typically from a nib.
+                
+        println("Testing, new class worked")
+        
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func loginButtonClicked(sender: AnyObject) {
+        
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        let username = usernameField.text
+        let destinationVC = segue.destinationViewController as ProfileFeedViewController
+        destinationVC.username = username
+        
+    }
    
 }

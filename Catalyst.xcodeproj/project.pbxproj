@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		540158601A8D22DE0060CC71 /* artwork2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5401585E1A8D22DE0060CC71 /* artwork2.png */; };
 		540158631A8D25220060CC71 /* SplashScreen_Initial3.png in Resources */ = {isa = PBXBuildFile; fileRef = 540158621A8D25220060CC71 /* SplashScreen_Initial3.png */; };
+		54F1EEEF1A95A2AD005A2F41 /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F1EEEE1A95A2AD005A2F41 /* LoginScreenViewController.swift */; };
 		BA1983081A8C1E31008CD020 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1983071A8C1E31008CD020 /* AppDelegate.swift */; };
 		BA19830A1A8C1E31008CD020 /* ProfileFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1983091A8C1E31008CD020 /* ProfileFeedViewController.swift */; };
 		BA19830D1A8C1E31008CD020 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA19830B1A8C1E31008CD020 /* Main.storyboard */; };
@@ -31,6 +32,7 @@
 /* Begin PBXFileReference section */
 		5401585E1A8D22DE0060CC71 /* artwork2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = artwork2.png; sourceTree = "<group>"; };
 		540158621A8D25220060CC71 /* SplashScreen_Initial3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SplashScreen_Initial3.png; sourceTree = "<group>"; };
+		54F1EEEE1A95A2AD005A2F41 /* LoginScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginScreenViewController.swift; sourceTree = "<group>"; };
 		BA1983021A8C1E31008CD020 /* Catalyst.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Catalyst.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA1983061A8C1E31008CD020 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA1983071A8C1E31008CD020 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				BA1983101A8C1E31008CD020 /* LaunchScreen.xib */,
 				BA1983051A8C1E31008CD020 /* Supporting Files */,
 				BAB58A3C1A8C687B0043F3F3 /* APIController.swift */,
+				54F1EEEE1A95A2AD005A2F41 /* LoginScreenViewController.swift */,
 			);
 			path = Catalyst;
 			sourceTree = "<group>";
@@ -225,6 +228,7 @@
 			files = (
 				BA19830A1A8C1E31008CD020 /* ProfileFeedViewController.swift in Sources */,
 				BA1983081A8C1E31008CD020 /* AppDelegate.swift in Sources */,
+				54F1EEEF1A95A2AD005A2F41 /* LoginScreenViewController.swift in Sources */,
 				BAB58A3D1A8C687B0043F3F3 /* APIController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

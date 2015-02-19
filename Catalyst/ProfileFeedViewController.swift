@@ -16,6 +16,8 @@ class ProfileFeedViewController: UIViewController, UITableViewDelegate, UITableV
     var api = APIController()
     var table_data = []
     
+    var username = ""
+    
     //Image cache dictionary
     var imageCache = [String : UIImage]()
     
@@ -28,7 +30,7 @@ class ProfileFeedViewController: UIViewController, UITableViewDelegate, UITableV
         self.profile_feed.registerClass(UITableViewCell.self, forCellReuseIdentifier: "cell")
         self.api.delegate = self
         
-        api.get_nearby_profiles(username:"nvilla")
+        api.get_nearby_profiles(username:username)
         
         
         
@@ -82,7 +84,7 @@ class ProfileFeedViewController: UIViewController, UITableViewDelegate, UITableV
                         if let cellToUpdate = self.profile_feed.cellForRowAtIndexPath(indexPath) {
                             if let thumbnail = cellToUpdate.viewWithTag(104) as? UIImageView {
                                 thumbnail.image = image
-                            }                            
+                            }
                         }
                     })
                 } else {

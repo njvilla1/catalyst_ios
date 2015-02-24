@@ -7,23 +7,31 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="458" height="482"/>
+            <rect key="frame" x="0.0" y="0.0" width="458" height="501"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SplashScreen_Initial3.png" translatesAutoresizingMaskIntoConstraints="NO" id="OuK-lE-GOP">
-                    <rect key="frame" x="-22" y="-25" width="480" height="507"/>
+                    <rect key="frame" x="-22" y="0.0" width="480" height="501"/>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="LOADING" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ro-MX-gNZ">
+                    <rect key="frame" x="171" y="240" width="116" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="OuK-lE-GOP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="-25" id="5be-G4-JXj"/>
+                <constraint firstItem="OuK-lE-GOP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="5be-G4-JXj"/>
+                <constraint firstAttribute="centerY" secondItem="6Ro-MX-gNZ" secondAttribute="centerY" id="NPh-Mb-mGQ"/>
                 <constraint firstAttribute="trailing" secondItem="OuK-lE-GOP" secondAttribute="trailing" id="NT6-FG-NNb"/>
                 <constraint firstAttribute="bottom" secondItem="OuK-lE-GOP" secondAttribute="bottom" id="bOy-Tk-tFQ"/>
+                <constraint firstAttribute="centerX" secondItem="6Ro-MX-gNZ" secondAttribute="centerX" id="htH-WE-OjA"/>
                 <constraint firstItem="OuK-lE-GOP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="-22" id="jbC-0V-q0N"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="537" y="456"/>
+            <point key="canvasLocation" x="537" y="446.5"/>
         </view>
     </objects>
     <resources>

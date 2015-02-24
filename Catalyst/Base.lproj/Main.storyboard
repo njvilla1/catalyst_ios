@@ -87,8 +87,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="SplashScreen_Initial3.png" translatesAutoresizingMaskIntoConstraints="NO" id="orP-Ta-8N0">
-                                <rect key="frame" x="0.0" y="80" width="600" height="520"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5g-dI-wWV">
+                                <rect key="frame" x="0.0" y="0.0" width="605" height="84"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Catalyst" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pag-IB-PIr">
                                 <rect key="frame" x="72" y="31" width="144" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
@@ -150,7 +157,7 @@
                             <constraint firstAttribute="centerX" secondItem="8J9-PW-dXV" secondAttribute="centerX" id="Z2w-gg-YDe"/>
                             <constraint firstAttribute="centerX" secondItem="dPm-6X-ysl" secondAttribute="centerX" id="eLq-Gs-tcS"/>
                             <constraint firstItem="pag-IB-PIr" firstAttribute="top" secondItem="mIF-0C-Uew" secondAttribute="bottom" constant="10" id="g2U-26-GAb"/>
-                            <constraint firstItem="orP-Ta-8N0" firstAttribute="top" secondItem="lwv-Wf-Drm" secondAttribute="topMargin" constant="80" id="jP1-gv-EtY"/>
+                            <constraint firstItem="orP-Ta-8N0" firstAttribute="top" secondItem="lwv-Wf-Drm" secondAttribute="topMargin" id="jP1-gv-EtY"/>
                             <constraint firstItem="90s-3C-TnQ" firstAttribute="leading" secondItem="lwv-Wf-Drm" secondAttribute="leadingMargin" constant="30" id="nEo-pR-8sJ"/>
                             <constraint firstItem="EyV-ZZ-fKI" firstAttribute="leading" secondItem="lwv-Wf-Drm" secondAttribute="leadingMargin" constant="20" id="vqh-Ch-6gw"/>
                         </constraints>
